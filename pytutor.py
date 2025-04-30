@@ -2,9 +2,10 @@ import google.generativeai as ai
 import speech_recognition as sr
 import pyttsx3
 
-API_KEY = 'AIzaSyA-kyCjsLOyTYRKkbgO-VOveuffLQixzuk'
+#API and Model setup
+API_KEY = 'Your_API_Key'
 ai.configure(api_key=API_KEY)
-model = ai.GenerativeModel("gemini-2.0-flash")
+model = ai.GenerativeModel("gemini-pro")
 chat = model.start_chat()
 
 # Default prompt
@@ -18,7 +19,7 @@ tts_engine = pyttsx3.init()
 def listen():
     with sr.Microphone() as source:
         print("Doremon: Listening... Speak clearly.")
-        speak("Listening... Speak clearly.")
+        speak("Listening speak clearly")
         recognizer.adjust_for_ambient_noise(source)
 
         try:
@@ -28,7 +29,7 @@ def listen():
             return text
         except (sr.WaitTimeoutError, sr.UnknownValueError, sr.RequestError):
             print("Doremon: I couldn't hear or understand you. Try again.")
-            speak("I couldn't hear or understand you. Try again.")
+            speak("I couldn't hear or understand you. Try again")
             return None
 
 # Function to speak a response
@@ -39,17 +40,19 @@ def speak(text):
 # Function to inform the user that the system is processing information
 def processing_info():
     print("Doremon: I'm processing your request, please wait...")
-    speak("I'm processing your request, please wait...")
+    speak("I'm processing your request, please wait")
 
 # Chatbot loop
 print("Doremon Python Tutor started. Say 'exit' to stop.")
-speak("Doremon Python Tutor started. Say 'exit' to stop.")
+print("Doremon: Hi, I'm Doremon! Ready to explore Python together?")
+speak("Hi, I'm Doremon! Ready to explore Python together? You can talk or ask something, or say exit anytime to stop")
 while True:
     user_input = listen()
 
     if user_input:
         if "exit" in user_input:
             print("Doremon: Exiting Python Tutor...")
+            speak("Exiting Python Tutor")
             speak("Goodbye! Keep coding!")
             break
 
@@ -57,7 +60,7 @@ while True:
         if "explain in detail" in user_input or "give me more details" in user_input:
             modified_prompt = "Provide a detailed explanation of Python concepts."
         else:
-            modified_prompt = default_prompt  # Default response
+            modified_prompt = default_prompt
 
         # Inform the user that Doremon is processing the request
         processing_info()
