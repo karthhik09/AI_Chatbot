@@ -1,4 +1,4 @@
-# 🤖 Doremon - Interactive Python Tutor
+# 🤖 Doraemon - Interactive Python Tutor
 
 ## 🎯 Overview
 
