@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-**Doremon** is a voice-interactive Python tutor powered by Google Gemini AI. It listens to your questions through your microphone, processes them using the Gemini AI model, and responds with concise Python-related answers. Designed to be interactive and beginner-friendly, Doremon helps users learn Python through voice-based conversations.
+**Doraemon** is a voice-interactive Python tutor powered by Google Gemini AI. It listens to your questions through your microphone, processes them using the Gemini AI model, and responds with concise Python-related answers. Designed to be interactive and beginner-friendly, Doraemon helps users learn Python through voice-based conversations.
 
 ---
 
